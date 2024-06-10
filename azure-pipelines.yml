@@ -33,4 +33,5 @@ steps:
     BuildCommand: 'clean verify -Dmaven.repo.local=$(MAVEN_CACHE_FOLDER)'
     PolicyFailAction: '1'
 
-- bash: cp -a /home/vsts/.fortify/scancentral-23.2.1/log/. $(Agent.TempDirectory)/
+- pwsh: Write-Host "##vso[task.uploadfile]/home/vsts/.fortify/scancentral-23.2.1/log/scancentral.log"
+- pwsh: Write-Host "##vso[task.uploadfile]/home/vsts/.fortify/scancentral-23.2.1/log/launcher.log"
